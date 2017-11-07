@@ -8,13 +8,23 @@
 
 _The program uses .Net technologies to build a website that organizes students and standards into problem-based learning. Organization includes diving information into classes for the Project, Groups Participants, Stakeholders, Standards, Teams, and Tasks. _
 
-_The program will include authentication for indvidual partipants."
+_The program will include authentication for individual partipants."
 
 ## Setup/Installation Requirements
 
 * _Use an up-to-date browser._
 * _Requires SQL server.  This program runs MAMP._
 * _To Install NuGet Packages._
+
+- Microsoft.AspNetCore v1.1.2
+- Microsoft.AspNetCore.Mvc v1.1.2
+- Microsoft.EntityFrameworkCore v1.1.2
+- Pomelo.EntityFrameworkCore.MySql v1.1.2
+- Pomelo.EntityFrameworkCore.MySql.Design v1.1.2
+- Microsoft.AspNet.Identity.EntityFrameworkCore v1.1.2
+- Microsoft.AspNetCore.StaticFiles v1.1.2
+- Microsoft.EntityFrameworkCore.Tools.DotNet v1.1.2
+
 
 | Behavior | Input | Output | Reasoning |
 | ---- | ---- | ---- | ---- |
