@@ -1,0 +1,32 @@
+﻿@model List<BrauerNet.Models.Project>
+
+@{
+    ViewData["Title"] = "Project";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Projects on BrauerNet</h2>
+<hr />
+    @foreach (var project in Model)
+    {
+        <div class="col-md-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3>@Html.DisplayFor(project => listProduct.Name)</h3>
+                </div>
+                <div class="panel-body">
+                    <p>@Html.DisplayFor(project => project.Origincountry)</p>
+                    <p>@Html.DisplayFor(project => project.Cost)</p>
+                    <p>@Html.ActionLink("Details", "Details", new { id = project.ProjectId })</p>
+                </div>
+            </div>
+        </div>
+
+    }
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    @Html.ActionLink("View All Products", "AllProducts")
+</p>

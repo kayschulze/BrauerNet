@@ -26,6 +26,13 @@
   <ItemGroup>
     <Folder Include="Models\Repositories\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Views\Groups\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\Projects\" />
+    <Folder Include="Views\Stakeholders\" />
+    <Folder Include="Views\Standards\" />
+    <Folder Include="Views\Tasks\" />
+    <Folder Include="Views\Teams\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\HomeController.cs" />
