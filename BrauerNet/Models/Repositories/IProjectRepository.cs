@@ -1,10 +1,12 @@
 ﻿using System;
-namespace BrauerNet.Models.Repositories
+namespace BrauerNet.Models
 {
     public class IProjectRepository
     {
-        public IProjectRepository()
-        {
-        }
+        IQueryable<Project> Projects { get; }
+        Project Save(Project project);
+        Project Edit(Project project);
+        void Remove(Project project);
     }
+
 }

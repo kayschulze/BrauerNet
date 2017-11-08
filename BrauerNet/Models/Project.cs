@@ -17,9 +17,7 @@ namespace BrauerNet.Models
             public List<Standard> Standards { get; set; }
             public List<Task> Tasks { get; set; }
             public List<Team> Teams { get; set; }
-            public List<Participant> Students { get; set; }
-            public List<Participant> Mentors { get; set; }
-            public List<Participant> Teachers { get; set; }
+
         }
     }
 }

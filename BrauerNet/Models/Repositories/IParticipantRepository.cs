@@ -1,10 +1,11 @@
 ﻿using System;
-namespace BrauerNet.Models.Repositories
+namespace BrauerNet.Models
 {
     public class IParticipantRepository
     {
-        public IParticipantRepository()
-        {
-        }
+        IQueryable<Participant> Participants { get; }
+        Participant Save(Participant participant);
+        Participant Edit(Participant participant);
+        void Remove(Participant participant);
     }
 }

@@ -1,10 +1,11 @@
 ﻿using System;
-namespace BrauerNet.Models.Repositories
+namespace BrauerNet.Models
 {
     public class IStandard
     {
-        public IStandard()
-        {
-        }
+        IQueryable<Standard> Standards { get; }
+        Group Save(Standard standard);
+        Group Edit(Standard standard);
+        void Remove(Standard standard);
     }
 }

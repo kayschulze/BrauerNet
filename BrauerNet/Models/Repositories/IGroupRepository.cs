@@ -1,10 +1,12 @@
-﻿using System;
-namespace BrauerNet.Models.Repositories
+﻿using System.Linq;
+
+namespace BrauerNet.Models
 {
-    public class IGroupRepository
+    public interface IGroupRepository
     {
-        public IGroupRepository()
-        {
-        }
+        IQueryable<Group> Groups { get; }
+        Group Save(Group group);
+        Group Edit(Group group);
+        void Remove(Group group);
     }
 }
