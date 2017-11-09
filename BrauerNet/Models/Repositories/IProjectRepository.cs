@@ -1,7 +1,8 @@
-﻿using System;
+﻿using System.Linq;
+
 namespace BrauerNet.Models
 {
-    public class IProjectRepository
+    public interface IProjectRepository
     {
         IQueryable<Project> Projects { get; }
         Project Save(Project project);

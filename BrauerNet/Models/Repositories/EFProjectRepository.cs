@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
-namespace BrauerNet.Models;
+namespace BrauerNet.Models
 {
     public class EFProjectRepository
     {
