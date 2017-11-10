@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using BrauerNet.Models;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace BrauerNet.Controllers
 {
@@ -32,7 +31,7 @@ namespace BrauerNet.Controllers
 		public IActionResult Details(int id)
 		{
 			ViewBag.thisProduct = projectRepo.Projects;
-			var thisProduct = projectRepo.Projects.FirstOrDefault(x => x.ProductId == id);
+			var thisProduct = projectRepo.Projects.FirstOrDefault(x => x.ProjectId == id);
 			return View(thisProduct);
 		}
 
@@ -50,7 +49,7 @@ namespace BrauerNet.Controllers
 
 		public IActionResult Edit(int id)
 		{
-			var thisProduct = projectRepo.Projects.FirstOrDefault(x => x.ProjectId == id);
+			var thisProject = projectRepo.Projects.FirstOrDefault(x => x.ProjectId == id);
 			return View(thisProject);
 		}
 

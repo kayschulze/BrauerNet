@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BrauerNet.Models
 {
-    public class EFProjectRepository
+    public class EFProjectRepository : IProjectRepository
     {
         BrauerNetDbContext db;
 
