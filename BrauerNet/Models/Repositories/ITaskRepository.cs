@@ -1,7 +1,8 @@
-﻿using System;
+﻿using System.Linq;
+
 namespace BrauerNet.Models
 {
-    public class ITaskRepository
+    public interface ITaskRepository
     {
         IQueryable<Task> Tasks { get; }
         Task Save(Task task);

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BrauerNet.Models
 {
-    public class EFTaskRepository
+    public class EFTaskRepository : ITaskRepository
     {
         BrauerNetDbContext db;
 
@@ -19,7 +19,7 @@ namespace BrauerNet.Models
             }
         }
 
-        public IQueryable<Tasks> Tasks
+        public IQueryable<Task> Tasks
         { get { return db.Tasks; } }
 
         public Task Save(Task task)

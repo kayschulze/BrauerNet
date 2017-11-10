@@ -1,7 +1,8 @@
-﻿using System;
+﻿using System.Linq;
+
 namespace BrauerNet.Models
 {
-    public class ITeamRepository
+    public interface ITeamRepository
     {
         IQueryable<Team> Teams { get; }
         Team Save(Team team);

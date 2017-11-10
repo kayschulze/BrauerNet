@@ -5,8 +5,8 @@ namespace BrauerNet.Models
     public interface IStandardRepository
     {
         IQueryable<Standard> Standards { get; }
-        Group Save(Standard standard);
-        Group Edit(Standard standard);
+        Standard Save(Standard standard);
+        Standard Edit(Standard standard);
         void Remove(Standard standard);
     }
 }
