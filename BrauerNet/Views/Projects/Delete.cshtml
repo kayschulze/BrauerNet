@@ -1,0 +1,19 @@
+﻿@BrauerNet.Models.Project
+
+@{
+    ViewData["Title"] = "Project - Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+    <h2>Are you sure you want to delete this project?</h2>
+    <hr />
+
+    @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+
+    @using(Html.BeginForm())
+    {
+        <input type="submit" value="Delete" />
+    }
+}

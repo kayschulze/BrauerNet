@@ -1,0 +1,24 @@
+﻿@model List<BrauerNet.Models.Project>
+
+@{
+    ViewData["Title"] = "Project";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit Project on BrauerNet</h2>
+<hr />
+    @using (Html.BeginForm())
+    {
+        Html.LabelFor(model => model.Name)
+        Html.EditorFor(model => model.Name)
+
+        <h3>Goals</h3>
+        <ul>
+        for(var i = 0; i < 3; i++)
+        {
+            <td>@Html.EditorFor(model => model.Goals[i])</td>
+        }
+        </ul>
+
+        <input type="submit" value="Create" class="btn btn-success" />
+    }
