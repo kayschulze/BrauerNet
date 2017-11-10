@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BrauerNet.Models
 {
-    public class EFStakeholderRepository
+    public class EFStakeholderRepository : IStakeholderRepository
     {
         BrauerNetDbContext db;
 
@@ -38,7 +38,7 @@ namespace BrauerNet.Models
 
         public void Remove(Stakeholder stakeholder)
         {
-            db.Stakeholder.Remove(stakeholder);
+            db.Stakeholders.Remove(stakeholder);
             db.SaveChanges();
         }
     }

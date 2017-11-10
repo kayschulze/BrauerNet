@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+
 namespace BrauerNet.Models
 {
     [Table("Stakeholders")]
+
     public class Stakeholder
     {
         public int StakeholderId { get; set; }

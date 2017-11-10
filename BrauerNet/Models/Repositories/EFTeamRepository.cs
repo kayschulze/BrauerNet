@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BrauerNet.Models
 {
-    public class EFTeamRepository
+    public class EFTeamRepository : ITeamRepository
     {
         BrauerNetDbContext db;
 
-        public EFGroupRepository(BrauerNetDbContext connection = null)
+        public EFTeamRepository(BrauerNetDbContext connection = null)
         {
             if (connection == null)
             {
@@ -38,7 +38,7 @@ namespace BrauerNet.Models
 
         public void Remove(Team team)
         {
-            db.Team.Remove(team);
+            db.Teams.Remove(team);
             db.SaveChanges();
         }
     }

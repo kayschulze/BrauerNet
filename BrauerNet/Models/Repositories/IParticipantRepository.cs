@@ -1,7 +1,8 @@
-﻿using System;
+﻿using System.Linq;
+
 namespace BrauerNet.Models
 {
-    public class IParticipantRepository
+    public interface IParticipantRepository
     {
         IQueryable<Participant> Participants { get; }
         Participant Save(Participant participant);

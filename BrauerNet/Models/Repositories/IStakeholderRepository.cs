@@ -1,11 +1,12 @@
-﻿using System;
+﻿using System.Linq;
+
 namespace BrauerNet.Models
 {
-    public class IStakeholderRepository
+    public interface IStakeholderRepository
     {
         IQueryable<Stakeholder> Stakeholders { get; }
-        Group Save(Stakeholder stakeholder);
-        Group Edit(Stakeholder stakeholder);
+        Stakeholder Save(Stakeholder stakeholder);
+        Stakeholder Edit(Stakeholder stakeholder);
         void Remove(Stakeholder stakeholder);
     }
 }

@@ -1,7 +1,8 @@
-﻿using System;
+﻿using System.Linq;
+
 namespace BrauerNet.Models
 {
-    public class IStandard
+    public interface IStandardRepository
     {
         IQueryable<Standard> Standards { get; }
         Group Save(Standard standard);
