@@ -24,7 +24,6 @@ namespace BrauerNet.Controllers
 		public IActionResult Index()
 		{
 			Project newProject = new Project();
-
 			return View(newProject);
 		}
 

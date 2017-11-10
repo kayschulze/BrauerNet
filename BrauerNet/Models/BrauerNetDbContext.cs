@@ -20,7 +20,7 @@ namespace BrauerNet.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseMySql(@"Server=localhost;Port=8889;database=brauernetdb;uid=root;pwd=root;");
+            options.UseMySql(@"Server=localhost;Port=3306;database=brauernetdb;uid=root;pwd=root;");
         }
 
         public BrauerNetDbContext(DbContextOptions<BrauerNetDbContext> options)

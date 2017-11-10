@@ -1,15 +1,6 @@
-<<<<<<< HEAD
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace BrauerNet.Models
-{
-    public class Team
-    {
-=======
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BrauerNet.Models
 {
@@ -21,6 +12,5 @@ namespace BrauerNet.Models
         public int TeamId { get; set; }
         public string Name { get; set; }
         public List<Participant> Members { get; set; }
->>>>>>> ae1cbc95bb978b159ac156a92de16d795b878e9a
     }
 }
