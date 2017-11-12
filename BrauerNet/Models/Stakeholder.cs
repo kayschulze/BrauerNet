@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BrauerNet.Models
 {
@@ -6,6 +7,7 @@ namespace BrauerNet.Models
 
     public class Stakeholder
     {
+        [Key]
         public int StakeholderId { get; set; }
         public string Name { get; set; }
         public string Role { get; set; }

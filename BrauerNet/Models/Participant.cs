@@ -1,10 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
 
 namespace BrauerNet.Models
 {
+    [Table("Participants")]
     public class Participant : IdentityUser
     {
+        [Key]
         public int ParticipantId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

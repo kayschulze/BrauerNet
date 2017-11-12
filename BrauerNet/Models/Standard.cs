@@ -7,7 +7,6 @@ namespace BrauerNet.Models
 
     public class Standard
     {
-
         [Key]
         public int StandardId { get; set; }
         public string Type { get; set; }

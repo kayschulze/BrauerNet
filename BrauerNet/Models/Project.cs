@@ -17,8 +17,6 @@ namespace BrauerNet.Models
         public List<Task> Tasks { get; set; }
         public List<Team> Teams { get; set; }
 
-        public Project() { }
-
         public Project(string name, List<string> goals, int projectId = 0)
         {
             Name = name;
