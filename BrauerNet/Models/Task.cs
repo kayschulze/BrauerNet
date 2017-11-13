@@ -10,7 +10,17 @@ namespace BrauerNet.Models
         [Key]
         public int TaskId { get; set; }
         public string Description { get; set; }
-        public virtual Team Team { get; set; }
         public bool Completed { get; set; }
+        public int TeamId { get; set; }
+        public virtual Team Team { get; set; }
+
+        public Task() { }
+
+        public Task(string description, bool completed, int teamid)
+        {
+            Description = description;
+            Completed = completed;
+            TeamId = teamid;
+        }
     }
 }

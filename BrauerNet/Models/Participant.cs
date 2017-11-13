@@ -15,5 +15,13 @@ namespace BrauerNet.Models
         //public string Email { get; set; } (inherited)
         //public string PhoneNumber { get; set; } (inherited)
         public List<Project> Projects { get; set; }
+
+        public Participant() { }
+
+        public Participant(string firstName, string lastName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
     }
 }

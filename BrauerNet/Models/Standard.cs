@@ -14,5 +14,12 @@ namespace BrauerNet.Models
         public string Description { get; set; }
 
         public Standard() { }
+
+        public Standard(string type, string identifier, string description)
+        {
+            Type = type;
+            Identifier = identifier;
+            Description = description;
+        }
     }
 }

@@ -23,8 +23,7 @@ namespace BrauerNet.Controllers
 
 		public IActionResult Index()
 		{
-			Project newProject = new Project();
-			return View(newProject);
+			return View(projectRepo.Projects.ToList());
 		}
 
 		public IActionResult Details(int id)

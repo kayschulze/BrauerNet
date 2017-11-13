@@ -10,8 +10,16 @@ namespace BrauerNet.Models
     {
         [Key]
         public int GroupId { get; set; }
+        public string Name { get; set; }
         public List<Participant> Students { get; set; }
         public List<Participant> Mentors { get; set; }
         public List<Participant> Teachers { get; set; }
+
+        public Group() { }
+
+        public Group(string name)
+        {
+            Name = name;
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace BrauerNet.Models
         }
 
         public virtual DbSet<Project> Projects { get; set; }
+        public virtual DbSet<Goal> Goals { get; set; }
         public virtual DbSet<Participant> Participants { get; set; }
         public virtual DbSet<Standard> Standards { get; set; }
         public virtual DbSet<Stakeholder> Stakeholders { get; set; }

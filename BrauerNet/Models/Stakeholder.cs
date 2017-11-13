@@ -11,5 +11,13 @@ namespace BrauerNet.Models
         public int StakeholderId { get; set; }
         public string Name { get; set; }
         public string Role { get; set; }
+
+        public Stakeholder() { }
+
+        public Stakeholder(string name, string role)
+        {
+            Name = name;
+            Role = role;
+        }
     }
 }
