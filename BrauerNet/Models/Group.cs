@@ -11,9 +11,9 @@ namespace BrauerNet.Models
         [Key]
         public int GroupId { get; set; }
         public string Name { get; set; }
-        public List<Participant> Students { get; set; }
-        public List<Participant> Mentors { get; set; }
-        public List<Participant> Teachers { get; set; }
+        public virtual List<Participant> Students { get; set; }
+        public virtual List<Participant> Mentors { get; set; }
+        public virtual List<Participant> Teachers { get; set; }
 
         public Group() { }
 

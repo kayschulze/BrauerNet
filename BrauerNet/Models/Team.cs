@@ -11,7 +11,7 @@ namespace BrauerNet.Models
         [Key]
         public int TeamId { get; set; }
         public string Name { get; set; }
-        public List<Participant> Members { get; set; }
+        public virtual List<Participant> Members { get; set; }
 
         public Team() { }
 

@@ -19,11 +19,8 @@
 	<ul>
     @for(var i = 0; i < 3; i++)
     {
-        <td>@Html.DisplayNameFor(model => model.Goals[i])</td>
+        <li>@Html.DisplayNameFor(model => model.Goals[i])</li>
     }
     </ul>
-    @Html.DisplayNameFor(model => model.Origincountry): @Html.DisplayFor(model => model.Origincountry)<br />
-    @Html.DisplayNameFor(model => model.Cost): @Html.DisplayFor(model => model.Cost)<br /><br />
-
 </body>
 </html>

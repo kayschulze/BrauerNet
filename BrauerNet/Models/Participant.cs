@@ -14,7 +14,7 @@ namespace BrauerNet.Models
         public string LastName { get; set; }
         //public string Email { get; set; } (inherited)
         //public string PhoneNumber { get; set; } (inherited)
-        public List<Project> Projects { get; set; }
+        public virtual List<Project> Projects { get; set; }
 
         public Participant() { }
 

@@ -7,23 +7,30 @@
 
 <h2>Projects on BrauerNet</h2>
 <hr />
+@if (Model.Count > 1)
+{
     @foreach (var project in Model)
     {
-        <div class="col-md-4">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3>@Html.DisplayFor(modelItem => project.Name)</h3>
-                </div>
-                <div class="panel-body">
-			        @foreach (var goal in project.Goals)
-			        {
-                        <p>@Html.DisplayFor(modelItem => project.Goals)</p>
-			        }
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3>@Html.DisplayFor(modelItem => project.Name)</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            @for (var i = 0; i < 3; i++)
+                            {
+                                <li>@Html.DisplayFor(modelItem => project.Goals[i].Description)</li>
+                            }
+                        </ul>
+			        
+                    </div>
                 </div>
             </div>
         </div>
-
     }
+}
 
 <h2>
     @Html.ActionLink("Create Project", "Create", "Projects")

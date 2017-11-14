@@ -8,16 +8,16 @@ namespace BrauerNet.Models
 
     public class Project
     {
-        BrauerNetDbContext db;
+        //BrauerNetDbContext db = new BrauerNetDbContext();
 
         [Key]
         public int ProjectId { get; set; }
         public string Name { get; set; }
-        public List<Goal> Goals { get; set; }
-        public List<Stakeholder> Stakeholders { get; set; }
-        public List<Standard> Standards { get; set; }
-        public List<Task> Tasks { get; set; }
-        public List<Team> Teams { get; set; }
+        public virtual List<Goal> Goals { get; set; }
+        public virtual List<Stakeholder> Stakeholders { get; set; }
+        public virtual List<Standard> Standards { get; set; }
+        public virtual List<Task> Tasks { get; set; }
+        public virtual List<Team> Teams { get; set; }
 
         public Project() { }
 

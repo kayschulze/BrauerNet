@@ -8,7 +8,7 @@ using BrauerNet.Models;
 namespace BrauerNet.Migrations
 {
     [DbContext(typeof(BrauerNetDbContext))]
-    [Migration("20171113025240_Initial")]
+    [Migration("20171113051705_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,8 @@ namespace BrauerNet.Migrations
                 {
                     b.Property<int>("GroupId")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
 
                     b.HasKey("GroupId");
 
@@ -179,7 +181,7 @@ namespace BrauerNet.Migrations
 
                     b.Property<int?>("ProjectId");
 
-                    b.Property<int?>("TeamId");
+                    b.Property<int>("TeamId");
 
                     b.HasKey("TaskId");
 
@@ -368,7 +370,8 @@ namespace BrauerNet.Migrations
 
                     b.HasOne("BrauerNet.Models.Team", "Team")
                         .WithMany()
-                        .HasForeignKey("TeamId");
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("BrauerNet.Models.Team", b =>

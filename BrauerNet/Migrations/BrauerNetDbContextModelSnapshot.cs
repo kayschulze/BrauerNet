@@ -36,6 +36,8 @@ namespace BrauerNet.Migrations
                     b.Property<int>("GroupId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Name");
+
                     b.HasKey("GroupId");
 
                     b.ToTable("Groups");
@@ -178,7 +180,7 @@ namespace BrauerNet.Migrations
 
                     b.Property<int?>("ProjectId");
 
-                    b.Property<int?>("TeamId");
+                    b.Property<int>("TeamId");
 
                     b.HasKey("TaskId");
 
@@ -367,7 +369,8 @@ namespace BrauerNet.Migrations
 
                     b.HasOne("BrauerNet.Models.Team", "Team")
                         .WithMany()
-                        .HasForeignKey("TeamId");
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("BrauerNet.Models.Team", b =>

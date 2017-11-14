@@ -1,4 +1,4 @@
-﻿@model List<BrauerNet.Models.Project>
+﻿@model BrauerNet.Models.Project
 
 @{
     ViewData["Title"] = "Project";
@@ -9,15 +9,15 @@
 <hr />
     @using (Html.BeginForm())
     {
-        Html.LabelFor(model => model.Name)
-        Html.EditorFor(model => model.Name)
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
 
         <h3>Goals</h3>
         <ul>
-        for(var i = 0; i < 3; i++)
-        {
-            <td>@Html.EditorFor(model => model.Goals[i])</td>
-        }
+            @for (var i = 0; i < 3; i++)
+            {
+                <li>@Html.EditorFor(model => model.Goals[i].Description)</li>
+            }
         </ul>
 
         <input type="submit" value="Create" class="btn btn-success" />

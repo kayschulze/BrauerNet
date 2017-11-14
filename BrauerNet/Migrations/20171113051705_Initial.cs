@@ -13,7 +13,8 @@ namespace BrauerNet.Migrations
                 columns: table => new
                 {
                     GroupId = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGeneratedOnAdd", true)
+                        .Annotation("MySql:ValueGeneratedOnAdd", true),
+                    Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -298,7 +299,7 @@ namespace BrauerNet.Migrations
                     Completed = table.Column<bool>(nullable: false),
                     Description = table.Column<string>(nullable: true),
                     ProjectId = table.Column<int>(nullable: true),
-                    TeamId = table.Column<int>(nullable: true)
+                    TeamId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -314,7 +315,7 @@ namespace BrauerNet.Migrations
                         column: x => x.TeamId,
                         principalTable: "Teams",
                         principalColumn: "TeamId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
