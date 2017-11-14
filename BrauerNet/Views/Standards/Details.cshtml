@@ -1,0 +1,21 @@
+﻿@model BrauerNet.Models.Standard
+
+@{
+    ViewData["Title"] = "Standard - Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <title>BrauerNet - Standard Details</title>
+
+</head>
+
+<body>
+    <h2>Standard Details</h2>
+    <hr />
+    @Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(model => model.Type) <br />
+    @Html.DisplayNameFor(model => model.Identifier): @Html.DisplayFor(model => model.Identifier)<br />
+    @Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)<br />
+</body>
+</html>

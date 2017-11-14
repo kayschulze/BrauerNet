@@ -1,0 +1,16 @@
+﻿@model BrauerNet.Models.Task
+
+@{
+    ViewData["Title"] = "Task - Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Are you sure you want to delete this Task?</h2>
+<hr />
+
+@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
+
+@using(Html.BeginForm())
+{
+    <input type="submit" value="Delete" />
+}

@@ -1,0 +1,21 @@
+﻿@model BrauerNet.Models.Standard
+
+@{
+    ViewData["Title"] = "Standard - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create a New Standard</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Type)
+    @Html.EditorFor(model => model.Type)
+    @Html.LabelFor(model => model.Identifier)
+    @Html.EditorFor(model => model.Identifier)
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)
+
+    <input type="submit" value="Create" class="btn btn-success" />
+}

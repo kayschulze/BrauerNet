@@ -29,7 +29,6 @@
   <ItemGroup>
     <Folder Include="Models\Repositories\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Views\Groups\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Projects\" />
     <Folder Include="Views\Stakeholders\" />

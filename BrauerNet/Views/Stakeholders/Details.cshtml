@@ -1,0 +1,20 @@
+﻿@model BrauerNet.Models.Stakeholder
+
+@{
+    ViewData["Title"] = "Stakeholder - Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <title>BrauerNet - Stakeholder Details</title>
+
+</head>
+
+<body>
+    <h2>Stakeholder Details</h2>
+    <hr />
+    @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)<br />
+    @Html.DisplayNameFor(model => model.Role): @Html.DisplayFor(model => model.Role)<br />
+</body>
+</html>

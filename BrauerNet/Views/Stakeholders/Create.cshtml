@@ -1,0 +1,19 @@
+﻿@model BrauerNet.Models.Stakeholder
+
+@{
+    ViewData["Title"] = "Stakeholder - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create a New Stakeholder</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+    @Html.LabelFor(model => model.Role)
+    @Html.EditorFor(model => model.Role)
+
+    <input type="submit" value="Create" class="btn btn-success" />
+}
