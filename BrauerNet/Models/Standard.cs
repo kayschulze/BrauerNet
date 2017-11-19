@@ -14,7 +14,7 @@ namespace BrauerNet.Models
         public string Identifier { get; set; }
         public string Description { get; set; }
 
-        public virtual List<Project> Projects { get; set; }
+        public virtual List<ProjectStandard> ProjectStandards { get; set; }
 
         public Standard() { }
 

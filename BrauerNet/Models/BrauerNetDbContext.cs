@@ -46,6 +46,58 @@ namespace BrauerNet.Models
                 .HasOne(gp => gp.Project)
                 .WithMany(p => p.GoalProjects)
                 .HasForeignKey(gp => gp.ProjectId);
+
+            modelBuilder.Entity<ProjectStakeholder>()
+                .HasKey(p => new { p.StakeholderId, p.ProjectId });
+
+            modelBuilder.Entity<ProjectStakeholder>()
+                .HasOne(ps => ps.Stakeholder)
+                .WithMany(s => s.ProjectStakeholders)
+                .HasForeignKey(ps => ps.StakeholderId);
+
+            modelBuilder.Entity<ProjectStakeholder>()
+                .HasOne(ps => ps.Project)
+                .WithMany(p => p.ProjectStakeholders)
+                .HasForeignKey(ps => ps.ProjectId);
+
+            modelBuilder.Entity<ProjectStandard>()
+                .HasKey(p => new { p.StandardId, p.ProjectId });
+
+            modelBuilder.Entity<ProjectStandard>()
+                .HasOne(ps => ps.Standard)
+                .WithMany(s => s.ProjectStandards)
+                .HasForeignKey(ps => ps.StandardId);
+
+            modelBuilder.Entity<ProjectStandard>()
+                .HasOne(ps => ps.Project)
+                .WithMany(p => p.ProjectStandards)
+                .HasForeignKey(ps => ps.ProjectId);
+
+            modelBuilder.Entity<ProjectTask>()
+                .HasKey(p => new { p.TaskId, p.ProjectId });
+
+            modelBuilder.Entity<ProjectTask>()
+                .HasOne(pt => pt.Task)
+                .WithMany(t => t.ProjectTasks)
+                .HasForeignKey(pt => pt.TaskId);
+
+            modelBuilder.Entity<ProjectTask>()
+                .HasOne(pt => pt.Project)
+                .WithMany(p => p.ProjectTasks)
+                .HasForeignKey(pt => pt.ProjectId);
+
+            modelBuilder.Entity<ProjectTeam>()
+                .HasKey(p => new { p.TeamId, p.ProjectId });
+
+            modelBuilder.Entity<ProjectTeam>()
+                .HasOne(pt => pt.Team)
+                .WithMany(t => t.ProjectTeams)
+                .HasForeignKey(pt => pt.TeamId);
+
+            modelBuilder.Entity<ProjectTeam>()
+                .HasOne(pt => pt.Project)
+                .WithMany(p => p.ProjectTeams)
+                .HasForeignKey(pt => pt.ProjectId);
         }
     }
 }

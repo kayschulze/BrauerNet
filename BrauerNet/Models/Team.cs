@@ -13,7 +13,7 @@ namespace BrauerNet.Models
         public string Name { get; set; }
         public virtual List<Participant> Members { get; set; }
 
-        public virtual List<Project> Projects { get; set; }
+        public virtual List<ProjectTeam> ProjectTeams { get; set; }
 
         public Team() { }
 

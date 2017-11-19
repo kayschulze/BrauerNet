@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace BrauerNet.Models
 {
@@ -11,6 +12,8 @@ namespace BrauerNet.Models
         public int StakeholderId { get; set; }
         public string Name { get; set; }
         public string Role { get; set; }
+
+        public virtual List<ProjectStakeholder> ProjectStakeholders { get; set; }
 
         public Stakeholder() { }
 

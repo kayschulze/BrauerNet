@@ -14,10 +14,10 @@ namespace BrauerNet.Models
         public int ProjectId { get; set; }
         public string Name { get; set; }
         public virtual List<GoalProject> GoalProjects { get; set; }
-        public virtual List<Stakeholder> Stakeholders { get; set; }
-        public virtual List<Standard> Standards { get; set; }
-        public virtual List<Task> Tasks { get; set; }
-        public virtual List<Team> Teams { get; set; }
+        public virtual List<ProjectStakeholder> ProjectStakeholders { get; set; }
+        public virtual List<ProjectStandard> ProjectStandards { get; set; }
+        public virtual List<ProjectTask> ProjectTasks { get; set; }
+        public virtual List<ProjectTeam> ProjectTeams { get; set; }
 
         public Project() { }
 

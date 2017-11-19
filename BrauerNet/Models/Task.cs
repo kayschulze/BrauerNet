@@ -15,7 +15,7 @@ namespace BrauerNet.Models
         public int TeamId { get; set; }
         public virtual Team Team { get; set; }
 
-        public virtual List<Project> Projects { get; set; }
+        public virtual List<ProjectTask> ProjectTasks { get; set; }
 
         public Task() { }
 

@@ -1,11 +1,11 @@
 ﻿namespace BrauerNet.Models
 {
-    public class GoalProject
+    public class ProjectStandard
     {
-        public int GoalId { get; set; }
-        public Goal Goal { get; set; }
-
         public int ProjectId { get; set; }
         public Project Project { get; set; }
+
+        public int StandardId { get; set; }
+        public Standard Standard { get; set; }
     }
 }
