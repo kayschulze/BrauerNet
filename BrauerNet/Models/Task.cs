@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace BrauerNet.Models
 {
@@ -13,6 +14,8 @@ namespace BrauerNet.Models
         public bool Completed { get; set; }
         public int TeamId { get; set; }
         public virtual Team Team { get; set; }
+
+        public virtual List<Project> Projects { get; set; }
 
         public Task() { }
 

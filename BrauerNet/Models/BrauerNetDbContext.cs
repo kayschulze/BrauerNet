@@ -30,9 +30,22 @@ namespace BrauerNet.Models
 
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<GoalProject>()
+                .HasKey(p => new { p.GoalId, p.ProjectId });
+
+            modelBuilder.Entity<GoalProject>()
+                .HasOne(gp => gp.Goal)
+                .WithMany(g => g.GoalProjects)
+                .HasForeignKey(gp => gp.GoalId);
+
+            modelBuilder.Entity<GoalProject>()
+                .HasOne(gp => gp.Project)
+                .WithMany(p => p.GoalProjects)
+                .HasForeignKey(gp => gp.ProjectId);
         }
     }
 }

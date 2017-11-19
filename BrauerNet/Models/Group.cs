@@ -15,6 +15,8 @@ namespace BrauerNet.Models
         public virtual List<Participant> Mentors { get; set; }
         public virtual List<Participant> Teachers { get; set; }
 
+        public virtual List<Project> Projects { get; set; }
+
         public Group() { }
 
         public Group(string name)

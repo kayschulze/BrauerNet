@@ -13,7 +13,7 @@ namespace BrauerNet.Models
         [Key]
         public int ProjectId { get; set; }
         public string Name { get; set; }
-        public virtual List<Goal> Goals { get; set; }
+        public virtual List<GoalProject> GoalProjects { get; set; }
         public virtual List<Stakeholder> Stakeholders { get; set; }
         public virtual List<Standard> Standards { get; set; }
         public virtual List<Task> Tasks { get; set; }
@@ -21,10 +21,10 @@ namespace BrauerNet.Models
 
         public Project() { }
 
-        public Project(string name, List<Goal> goals, int projectId = 0)
+        public Project(string name, List<GoalProject> goals, int projectId = 0)
         {
             Name = name;
-            Goals = goals;
+            GoalProjects = goals;
         }
     }
 }
