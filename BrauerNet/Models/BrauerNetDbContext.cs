@@ -16,7 +16,7 @@ namespace BrauerNet.Models
         public virtual DbSet<Standard> Standards { get; set; }
         public virtual DbSet<Stakeholder> Stakeholders { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
-        public virtual DbSet<Task> Tasks { get; set; }
+        //public virtual DbSet<Task> Tasks { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
@@ -39,7 +39,7 @@ namespace BrauerNet.Models
 
             modelBuilder.Entity<GoalProject>()
                 .HasOne(gp => gp.Goal)
-                .WithMany(g => g.GoalProjects)
+                .WithMany(gp => gp.GoalProjects)
                 .HasForeignKey(gp => gp.GoalId);
 
             modelBuilder.Entity<GoalProject>()
@@ -73,7 +73,7 @@ namespace BrauerNet.Models
                 .WithMany(p => p.ProjectStandards)
                 .HasForeignKey(ps => ps.ProjectId);
 
-            modelBuilder.Entity<ProjectTask>()
+            /**modelBuilder.Entity<ProjectTask>()
                 .HasKey(p => new { p.TaskId, p.ProjectId });
 
             modelBuilder.Entity<ProjectTask>()
@@ -84,7 +84,7 @@ namespace BrauerNet.Models
             modelBuilder.Entity<ProjectTask>()
                 .HasOne(pt => pt.Project)
                 .WithMany(p => p.ProjectTasks)
-                .HasForeignKey(pt => pt.ProjectId);
+                .HasForeignKey(pt => pt.ProjectId); **/
 
             modelBuilder.Entity<ProjectTeam>()
                 .HasKey(p => new { p.TeamId, p.ProjectId });

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using BrauerNet.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BrauerNet.Controllers
 {
@@ -23,7 +24,13 @@ namespace BrauerNet.Controllers
 
 		public IActionResult Index()
 		{
-			return View(projectRepo.Projects.ToList());
+            //ViewBag.theseProjects = projectRepo.Projects;
+            //List<Goal> goalList = projectRep
+            var projectsList = projectRepo.Projects
+                .Include(p => p.GoalProjects)
+                .ToList();
+
+            return View(projectsList);
 		}
 
 		public IActionResult Details(int id)

@@ -34,5 +34,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\HomeController.cs" />
+    <Compile Remove="Models\ProjectTask.cs" />
+    <Compile Remove="Models\Repositories\EFTaskRepository.cs" />
+    <Compile Remove="Models\Repositories\ITaskRepository.cs" />
+    <Compile Remove="Models\Task.cs" />
   </ItemGroup>
 </Project>

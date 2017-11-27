@@ -1,11 +1,17 @@
-﻿namespace BrauerNet.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BrauerNet.Models
 {
+    //[Table("GoalProjects")]
+
     public class GoalProject
     {
-        public int GoalId { get; set; }
-        public Goal Goal { get; set; }
+        [Key]
+        public virtual int GoalId { get; set; }
+        public virtual Goal Goal { get; set; }
 
-        public int ProjectId { get; set; }
-        public Project Project { get; set; }
+        public virtual int ProjectId { get; set; }
+        public virtual Project Project { get; set; }
     }
 }

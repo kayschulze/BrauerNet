@@ -13,6 +13,7 @@ namespace BrauerNet.Models
         public string Description { get; set; }
 
         public virtual List<GoalProject> GoalProjects { get; set; }
+        //public List<Project> Projects { get; set; }
 
         public Goal() { }
 
