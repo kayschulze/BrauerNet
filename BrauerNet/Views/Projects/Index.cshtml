@@ -34,9 +34,6 @@
                         <ul>
                             @for (var i = 0; i < 3; i++)
                             {
-                                <li>@i</li>
-                                <li>@Html.DisplayFor(gp => newGoalList[i].GoalId)</li>
-                                <li>@Html.DisplayFor(gp => project.GoalProjects[i].GoalId)</li>
                                 <li>@Html.DisplayFor(gp => project.GoalProjects[i].Goal.Description)</li>
                             }
                         </ul>

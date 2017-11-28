@@ -28,6 +28,7 @@ namespace BrauerNet.Controllers
             //List<Goal> goalList = projectRep
             var projectsList = projectRepo.Projects
                 .Include(p => p.GoalProjects)
+                .ThenInclude(j => j.Goal)
                 .ToList();
 
             return View(projectsList);

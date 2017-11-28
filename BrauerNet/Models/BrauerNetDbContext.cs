@@ -19,6 +19,8 @@ namespace BrauerNet.Models
         //public virtual DbSet<Task> Tasks { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
 
+        public virtual DbSet<GoalProject> GoalProject { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseMySql(@"Server=localhost;Port=3306;database=brauernetdb;uid=root;pwd=root;");

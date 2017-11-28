@@ -3,11 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BrauerNet.Models
 {
-    //[Table("GoalProjects")]
-
     public class GoalProject
     {
-        [Key]
         public virtual int GoalId { get; set; }
         public virtual Goal Goal { get; set; }
 
