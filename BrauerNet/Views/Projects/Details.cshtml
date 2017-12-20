@@ -19,7 +19,7 @@
 	<ul>
     @for(var i = 0; i < 3; i++)
     {
-        <li>@Html.DisplayNameFor(model => model.Goals[i])</li>
+        <li>@Html.DisplayNameFor(model => model.GoalProjects[i].Goal.Description): @Html.DisplayFor(model => model.GoalProjects[i].Goal.Description)</li>
     }
     </ul>
 </body>

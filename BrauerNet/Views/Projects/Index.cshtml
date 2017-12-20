@@ -4,18 +4,6 @@
 @{
     ViewData["Title"] = "Project";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
-    Goal newGoal = new BrauerNet.Models.Goal();
-    List<Goal> newGoalList = new List<BrauerNet.Models.Goal>();
-    //int j = 0;
-    foreach (var project in Model)
-    {
-        for (var i = 0; i < 3; i++)
-        {
-            newGoal.GoalId = project.GoalProjects[i].GoalId;
-            newGoalList.Add(newGoal);
-        }
-    }
 }
 
 <h2>Projects on BrauerNet</h2>
@@ -29,6 +17,7 @@
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <h3>@Html.DisplayFor(modelItem => project.Name)</h3>
+                        <h4>@Html.ActionLink("Details", "Details", new { id = project.ProjectId })</h4>
                     </div>
                     <div class="panel-body">
                         <ul>

@@ -37,7 +37,10 @@ namespace BrauerNet.Controllers
 		public IActionResult Details(int id)
 		{
 			ViewBag.thisProduct = projectRepo.Projects;
-			var thisProduct = projectRepo.Projects.FirstOrDefault(x => x.ProjectId == id);
+            var thisProduct = projectRepo.Projects
+                .Include(p => p.GoalProjects)
+                .ThenInclude(j => j.Goal)
+                .FirstOrDefault(x => x.ProjectId == id);
 			return View(thisProduct);
 		}
 
