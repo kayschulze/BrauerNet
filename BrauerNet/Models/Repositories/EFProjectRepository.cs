@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using BrauerNet.ViewModels;
 
 namespace BrauerNet.Models
 {

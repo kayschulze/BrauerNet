@@ -22,6 +22,8 @@ namespace BrauerNet.Controllers
 			}
 		}
 
+
+
 		public IActionResult Index()
 		{
             //ViewBag.theseProjects = projectRepo.Projects;
@@ -36,12 +38,12 @@ namespace BrauerNet.Controllers
 
 		public IActionResult Details(int id)
 		{
-			ViewBag.thisProduct = projectRepo.Projects;
-            var thisProduct = projectRepo.Projects
+			ViewBag.thisProject = projectRepo.Projects;
+            var thisProject = projectRepo.Projects
                 .Include(p => p.GoalProjects)
                 .ThenInclude(j => j.Goal)
                 .FirstOrDefault(x => x.ProjectId == id);
-			return View(thisProduct);
+			return View(thisProject);
 		}
 
 		public IActionResult Create()
@@ -58,14 +60,18 @@ namespace BrauerNet.Controllers
 
 		public IActionResult Edit(int id)
 		{
-			var thisProject = projectRepo.Projects.FirstOrDefault(x => x.ProjectId == id);
-			return View(thisProject);
+            var thisProject = projectRepo.Projects
+                .FirstOrDefault(x => x.ProjectId == id);
+            return View(thisProject);
 		}
 
 		[HttpPost]
 		public IActionResult Edit(Project project)
 		{
-			projectRepo.Edit(project);
+            //int id = project.ProjectId;
+            projectRepo.Edit(project);
+            //projectRepo.Entry(project).State = EntityState.Modified;
+            //projectRepo.SaveChanges();
 			return RedirectToAction("Index");
 		}
 

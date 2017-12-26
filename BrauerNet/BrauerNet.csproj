@@ -27,7 +27,6 @@
  </ItemGroup>
 	
   <ItemGroup>
-    <Folder Include="Models\Repositories\" />
     <Folder Include="Controllers\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Projects\" />

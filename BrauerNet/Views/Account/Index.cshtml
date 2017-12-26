@@ -1,5 +1,6 @@
-﻿@model List<BrauerNet.Models.Project>
+﻿@model List<BrauerNet.Models.Participant>;
 @using BrauerNet.Models;
+@using BrauerNet.ViewModels;
 
 @{
     ViewData["Title"] = "Project";
@@ -10,30 +11,24 @@
 <hr />
 @if (Model.Count > 0)
 {
-    @foreach (var project in Model)
+    @foreach (var participant in Model)
     {
         <div class="row">
             <div class="col-md-4">
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h3>@Html.DisplayFor(modelItem => project.Name)</h3>
-                        <h5>@Html.ActionLink("Details", "Details", new { id = project.ProjectId })</h5>
-                        <h5>@Html.ActionLink("Edit", "Edit", new { id = project.ProjectId })</h5>
+                        <h3>
+                            @Html.DisplayFor(modelItem => participant.FirstName)
+                            @Html.DisplayFor(modelItem => participant.LastName)
+                        </h3>
                     </div>
-                    <div class="panel-body">
-                        <ul>
-                            @for (var i = 0; i < 3; i++)
-                            {
-                                <li>@Html.DisplayFor(gp => project.GoalProjects[i].Goal.Description)</li>
-                            }
-                        </ul>
 
-                    </div>
                 </div>
             </div>
         </div>
     }
 }
+
 
 <h2>
     @Html.ActionLink("Create Project", "Create", "Projects")

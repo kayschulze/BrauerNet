@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using BrauerNet.ViewModels
+
+@model ParticipantViewModel
+
+<h2>Register a new user</h2>
+<hr />
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    @Html.LabelFor(user => user.FirstName)
+    @Html.TextBoxFor(user => user.FirstName)
+
+    @Html.LabelFor(user => user.LastName)
+    @Html.TextBoxFor(user => user.LastName)
+
+    @Html.LabelFor(user => user.PhoneNumber)
+    @Html.TextBoxFor(user => user.PhoneNumber)
+
+    @Html.LabelFor(user => user.Email)
+    @Html.TextBoxFor(user => user.Email)
+
+    @Html.LabelFor(user => user.Password)
+    @Html.PasswordFor(user => user.Password)
+
+    @Html.LabelFor(user => user.ConfirmPassword)
+    @Html.PasswordFor(user => user.ConfirmPassword)
+
+    <input type="submit" value="Register" />
+}
