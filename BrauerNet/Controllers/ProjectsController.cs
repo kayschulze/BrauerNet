@@ -8,7 +8,6 @@ namespace BrauerNet.Controllers
     public class ProjectsController : Controller
     {
         private IProjectRepository projectRepo;
-        // GET: /<controller>/
 
 		public ProjectsController(IProjectRepository thisRepo = null)
 		{
@@ -84,7 +83,8 @@ namespace BrauerNet.Controllers
 		[HttpPost, ActionName("Delete")]
 		public IActionResult DeleteConfirmed(int id)
 		{
-			Project thisProject = projectRepo.Projects.FirstOrDefault(x => x.ProjectId == id);
+			Project thisProject = projectRepo.Projects
+                .FirstOrDefault(x => x.ProjectId == id);
 			projectRepo.Remove(thisProject);
 			return RedirectToAction("Index");
 		}

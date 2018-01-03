@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Employee Sign In</h2>
+<hr />
+@if (User.Identity.IsAuthenticated)
+            {
+    <p>Hello @User.Identity.Name!</p>
+                <p>Welcome to Admin View!!</p>
+}
+else
+{
+    <p>@Html.ActionLink("Register", "Register")</p>
+                <p>@Html.ActionLink("Log in", "Login")</p>
+}
+
+@if (User.Identity.IsAuthenticated)
+            {
+    @using (Html.BeginForm("LogOff", "Participants"))
+                {
+        <input type="submit" class="btn btn-default" value="Log out" />
+    }
+}
+
+
+<h2>
+    @Html.ActionLink("Create Project", "Create", "Projects")
+</h2>
+<h2>
+    @Html.ActionLink("Create Participant", "Create", "Participants")
+</h2>
+<h2>
+    @Html.ActionLink("Create Stakeholder", "Create", "Stakeholders")
+</h2>
+<h2>
+    @Html.ActionLink("Create Standard", "Create", "Standards")
+</h2>
