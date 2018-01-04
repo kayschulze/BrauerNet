@@ -20,10 +20,6 @@ namespace BrauerNet.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
             _db = db;
-            //if (thisRepo == null)
-            //{
-            //    this.participantRepo = new EFParticipantRepository();
-            //}
         }
 
         public IActionResult Index()

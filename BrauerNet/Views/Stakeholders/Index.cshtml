@@ -19,7 +19,8 @@
                         <h3>@Html.DisplayFor(modelItem => stakeholder.Role)</h3>
                     </div>
                     <div class="panel-body">
-                        			        
+                        <h5>@Html.ActionLink("Details", "Details", new { id = stakeholder.StakeholderId })</h5>
+                        <h5>@Html.ActionLink("Edit", "Edit", new { id = stakeholder.StakeholderId })</h5>			        
                     </div>
                 </div>
             </div>
@@ -31,7 +32,7 @@
     @Html.ActionLink("Create Project", "Create", "Projects")
 </h2>
 <h2>
-    @Html.ActionLink("Create Participant", "Create", "Participants")
+    @Html.ActionLink("Create Participant", "Register", "Participants")
 </h2>
 <h2>
     @Html.ActionLink("Create Stakeholder", "Create", "Stakeholders")

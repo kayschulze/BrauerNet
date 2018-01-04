@@ -23,8 +23,8 @@ namespace BrauerNet.Controllers
 
         public IActionResult Index()
         {
-            var stakeholdersList = stakeholderRepo.Stakeholders
-                .Include(p => p.ProjectStakeholders)
+            var stakeholdersList = stakeholderRepo
+                .Stakeholders
                 .ToList();
             return View(stakeholdersList);
         }

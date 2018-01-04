@@ -21,8 +21,6 @@ namespace BrauerNet.Controllers
 			}
 		}
 
-
-
 		public IActionResult Index()
 		{
             //ViewBag.theseProjects = projectRepo.Projects;
