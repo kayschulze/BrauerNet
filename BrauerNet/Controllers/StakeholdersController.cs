@@ -59,7 +59,8 @@ namespace BrauerNet.Controllers
         [HttpPost]
         public IActionResult Edit(Stakeholder stakeholder)
         {
-            stakeholderRepo.Edit(stakeholder);
+            stakeholderRepo
+                .Edit(stakeholder);
             return RedirectToAction("Index");
         }
 

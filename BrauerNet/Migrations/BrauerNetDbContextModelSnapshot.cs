@@ -166,19 +166,6 @@ namespace BrauerNet.Migrations
                     b.ToTable("ProjectStandard");
                 });
 
-            modelBuilder.Entity("BrauerNet.Models.ProjectTask", b =>
-                {
-                    b.Property<int>("TaskId");
-
-                    b.Property<int>("ProjectId");
-
-                    b.HasKey("TaskId", "ProjectId");
-
-                    b.HasIndex("ProjectId");
-
-                    b.ToTable("ProjectTask");
-                });
-
             modelBuilder.Entity("BrauerNet.Models.ProjectTeam", b =>
                 {
                     b.Property<int>("TeamId");
@@ -220,24 +207,6 @@ namespace BrauerNet.Migrations
                     b.HasKey("StandardId");
 
                     b.ToTable("Standards");
-                });
-
-            modelBuilder.Entity("BrauerNet.Models.Task", b =>
-                {
-                    b.Property<int>("TaskId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<bool>("Completed");
-
-                    b.Property<string>("Description");
-
-                    b.Property<int>("TeamId");
-
-                    b.HasKey("TaskId");
-
-                    b.HasIndex("TeamId");
-
-                    b.ToTable("Tasks");
                 });
 
             modelBuilder.Entity("BrauerNet.Models.Team", b =>
@@ -424,19 +393,6 @@ namespace BrauerNet.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("BrauerNet.Models.ProjectTask", b =>
-                {
-                    b.HasOne("BrauerNet.Models.Project", "Project")
-                        .WithMany("ProjectTasks")
-                        .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("BrauerNet.Models.Task", "Task")
-                        .WithMany("ProjectTasks")
-                        .HasForeignKey("TaskId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
             modelBuilder.Entity("BrauerNet.Models.ProjectTeam", b =>
                 {
                     b.HasOne("BrauerNet.Models.Project", "Project")
@@ -446,14 +402,6 @@ namespace BrauerNet.Migrations
 
                     b.HasOne("BrauerNet.Models.Team", "Team")
                         .WithMany("ProjectTeams")
-                        .HasForeignKey("TeamId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("BrauerNet.Models.Task", b =>
-                {
-                    b.HasOne("BrauerNet.Models.Team", "Team")
-                        .WithMany()
                         .HasForeignKey("TeamId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

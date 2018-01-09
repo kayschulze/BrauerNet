@@ -163,27 +163,6 @@ namespace BrauerNet.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tasks",
-                columns: table => new
-                {
-                    TaskId = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGeneratedOnAdd", true),
-                    Completed = table.Column<bool>(nullable: false),
-                    Description = table.Column<string>(nullable: true),
-                    TeamId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Tasks", x => x.TaskId);
-                    table.ForeignKey(
-                        name: "FK_Tasks_Teams_TeamId",
-                        column: x => x.TeamId,
-                        principalTable: "Teams",
-                        principalColumn: "TeamId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -362,30 +341,6 @@ namespace BrauerNet.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProjectTask",
-                columns: table => new
-                {
-                    TaskId = table.Column<int>(nullable: false),
-                    ProjectId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProjectTask", x => new { x.TaskId, x.ProjectId });
-                    table.ForeignKey(
-                        name: "FK_ProjectTask_Projects_ProjectId",
-                        column: x => x.ProjectId,
-                        principalTable: "Projects",
-                        principalColumn: "ProjectId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ProjectTask_Tasks_TaskId",
-                        column: x => x.TaskId,
-                        principalTable: "Tasks",
-                        principalColumn: "TaskId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ProjectTeam",
                 columns: table => new
                 {
@@ -461,19 +416,9 @@ namespace BrauerNet.Migrations
                 column: "ProjectId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProjectTask_ProjectId",
-                table: "ProjectTask",
-                column: "ProjectId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ProjectTeam_ProjectId",
                 table: "ProjectTeam",
                 column: "ProjectId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Tasks_TeamId",
-                table: "Tasks",
-                column: "TeamId");
 
             migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
@@ -514,9 +459,6 @@ namespace BrauerNet.Migrations
                 name: "ProjectStandard");
 
             migrationBuilder.DropTable(
-                name: "ProjectTask");
-
-            migrationBuilder.DropTable(
                 name: "ProjectTeam");
 
             migrationBuilder.DropTable(
@@ -542,9 +484,6 @@ namespace BrauerNet.Migrations
 
             migrationBuilder.DropTable(
                 name: "Standards");
-
-            migrationBuilder.DropTable(
-                name: "Tasks");
 
             migrationBuilder.DropTable(
                 name: "Projects");
